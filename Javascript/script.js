@@ -67,7 +67,12 @@ iconMenu.addEventListener("click", function () {
 let navLinks = document.querySelectorAll(".nav-item");
 navLinks.forEach((element) => {
   element.addEventListener("click", function () {
-    navigation.classList.remove("navigation-active");
+    navigation.classList.toggle("navigation-active");
+    if (iconMenu.classList.contains("fa-bars")) {
+      iconMenu.classList.replace("fa-bars", "fa-xmark");
+    } else if (iconMenu.classList.contains("fa-xmark")) {
+      iconMenu.classList.replace("fa-xmark", "fa-bars");
+    }
   });
 });
 
